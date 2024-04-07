@@ -4,7 +4,7 @@
 void LED_GPIO_Config(void){
 	
 
-	//定义一个结构体(每一个引脚都对应一个结构体)
+	//初始化一个结构体(每一个引脚都对应一个结构体)
 	GPIO_InitTypeDef GPIO_InitStruct_GREEN;
 	GPIO_InitTypeDef GPIO_InitStruct_BLUE;
 	GPIO_InitTypeDef GPIO_InitStruct_RED;
@@ -34,5 +34,15 @@ void LED_GPIO_Config(void){
 	GPIO_Init(LED_B_GPIO_PORT, &GPIO_InitStruct_BLUE);
 	GPIO_Init(LED_R_GPIO_PORT, &GPIO_InitStruct_RED);
 	
+	//默认LED全部灭掉
+	GPIO_SetBits(LED_G_GPIO_PORT,  LED_G_GPIO_PIN);
+	GPIO_SetBits(LED_R_GPIO_PORT,  LED_R_GPIO_PIN);
+	GPIO_SetBits(LED_B_GPIO_PORT,  LED_B_GPIO_PIN);
 
+}
+
+void assert_failed(uint8_t* file, uint32_t line)
+{
+	// 断言错误时执行的代码
+	LED_R_ON;
 }
