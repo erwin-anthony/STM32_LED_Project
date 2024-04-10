@@ -4,7 +4,7 @@
 #include "bsp_buzzer.h"
 
 
-//定义一个延时函数
+//定义一个简单的延时函数
 void Delay(uint32_t count){
 		
 	for(;count != 0;count--){
@@ -24,7 +24,7 @@ int main(void){
 	KEY_GPIO_Config();
 	//调用BUZZER的GPIO函数
 	BUZZER_GPIO_Config();
-	BUZZER_ON;
+	//BUZZER_ON;
 	//GPIO_SetBits(BUZZER_GPIO_PORT, BUZZER_GPIO_PIN);
 
 	

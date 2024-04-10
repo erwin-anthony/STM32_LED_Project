@@ -4,28 +4,28 @@
 void KEY_GPIO_Config(void){
 	
 	//初始化key的结构体
-	GPIO_InitTypeDef GPIO_InitStruct_KEY1;
-	GPIO_InitTypeDef GPIO_InitStruct_KEY2;
+	GPIO_InitTypeDef GPIO_InitStructure_KEY1;
+	GPIO_InitTypeDef GPIO_InitStructure_KEY2;
 	
 	//时钟的使能
 	RCC_APB2PeriphClockCmd(KEY1_GPIO_CLK,ENABLE);
 	RCC_APB2PeriphClockCmd(KEY2_GPIO_CLK,ENABLE);
 
 	//调用库函数，初始化GPIO
-	GPIO_Init(KEY1_GPIO_PORT, &GPIO_InitStruct_KEY1);
-	GPIO_Init(KEY2_GPIO_PORT, &GPIO_InitStruct_KEY2);
+	GPIO_Init(KEY1_GPIO_PORT, &GPIO_InitStructure_KEY1);
+	GPIO_Init(KEY2_GPIO_PORT, &GPIO_InitStructure_KEY2);
 
 	//对KEY1的引脚，引脚输入模式进行配置
 	//KEY1的GPIO配置
-	GPIO_InitStruct_KEY1.GPIO_Pin = KEY1_GPIO_PIN;
-	GPIO_InitStruct_KEY1.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+	GPIO_InitStructure_KEY1.GPIO_Pin = KEY1_GPIO_PIN;
+	GPIO_InitStructure_KEY1.GPIO_Mode = GPIO_Mode_IN_FLOATING;
 
 	
 	
 	//对KEY2的引脚，引脚输入模式进行配置
 	//KEY2的GPIO配置
-	GPIO_InitStruct_KEY2.GPIO_Pin = KEY2_GPIO_PIN;
-	GPIO_InitStruct_KEY2.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+	GPIO_InitStructure_KEY2.GPIO_Pin = KEY2_GPIO_PIN;
+	GPIO_InitStructure_KEY2.GPIO_Mode = GPIO_Mode_IN_FLOATING;
 
 }
 
