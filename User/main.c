@@ -25,7 +25,7 @@ int main(void){
 	//调用BUZZER的GPIO函数
 	BUZZER_GPIO_Config();
 	//BUZZER_ON;
-	//GPIO_SetBits(BUZZER_GPIO_PORT, BUZZER_GPIO_PIN);
+
 
 	
 	while(1){
